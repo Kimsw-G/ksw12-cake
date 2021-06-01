@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sec
+    username: root
+    password: koreait
+
+  mvc:
+    view:
+      prefix: /WEB-INF/view/
+      suffix: .jsp
+
