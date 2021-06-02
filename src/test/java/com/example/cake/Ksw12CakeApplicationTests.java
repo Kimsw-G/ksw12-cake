@@ -1,4 +1,4 @@
-package com.example.ksw12;
+package com.example.cake;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

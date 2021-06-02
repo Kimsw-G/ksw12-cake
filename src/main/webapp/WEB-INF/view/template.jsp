@@ -6,6 +6,10 @@
     <title>${title}</title>
 </head>
 <body>
-    <jsp:include page="/module/head.jsp"/>
+    <jsp:include page="./module/head.jsp"/>
+
+    <jsp:include page="./module/${page}.jsp"/>
+
+    <jsp:include page="./module/foot.jsp"/>
 </body>
 </html>

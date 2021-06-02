@@ -6,15 +6,13 @@
 
 <%--searchbar 위치--%>
 <div>
-
+    <input type="text" name="search">
+    <img src="/web-img/searchIcon.jpg">
 </div>
 
 <%--로그인, 회원가입--%>
 <div>
-
+    <a href="/user/login">로그인</a>
+    <a href="/user/join">회원가입</a>
 </div>
 
-<%-- 스크롤 방식 사진 회전 --%>
-<div>
-
-</div>

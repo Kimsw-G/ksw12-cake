@@ -1,4 +1,4 @@
-package com.example.ksw12;
+package com.example.cake;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
