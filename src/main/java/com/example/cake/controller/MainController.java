@@ -8,7 +8,10 @@ import com.example.cake.util.UserPath;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 
@@ -22,20 +25,16 @@ public class MainController extends ControllerManage implements UserPath, MainPa
     @Resource
     LoginInfo loginInfo;
 
-    @RequestMapping("/stores")
-    public String main(Model model){
-        // 어떤 정보를 가져와야 할까요?
-        // store에 넣어줄 table store의 정보를 가져오자
-
-
-//        mainService.setStoreInfo(model);
+    @GetMapping("/stores")
+    public String main(Model model,
+                       @RequestParam(value="search",defaultValue = "")String search){
+        if(search.equals("")){
+            mainService.setStoreInfo(model);
+        }else {
+            mainService.searchStoreInfo(model,search);
+        }
         setPage(model,STORES);
         return TEMPLATE;
     }
 
-    @RequestMapping("/search")
-    public String search(){
-
-        return TEMPLATE;
-    }
 }

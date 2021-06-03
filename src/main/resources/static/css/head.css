@@ -12,7 +12,9 @@
     width: 460px;
     height: inherit;
 }
-#searchIcon{
+#searchIcon,#searchButton{
+    border: 0;
+    padding: 0;
     width: 40px;
     height: inherit;
 }

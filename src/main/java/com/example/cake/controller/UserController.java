@@ -53,11 +53,13 @@ public class UserController extends ControllerManage implements UserPath, MainPa
     }
 
     @PostMapping("/join")
-    public String doJoin( UserDTO userDTO){
+    public String doJoin( UserDTO userDTO,Model model){
         // UserEntity를 바탕으로 회원정보 넣기
         if(userService.checkPw(userDTO)){
             userService.tryJoin(userDTO);
+            return REDIRECT+STORES;
         }
-        return REDIRECT+STORES;
+        String errMsg = "패스워드가 다릅니다!";
+        return REDIRECT+JOIN;
     }
 }

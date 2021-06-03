@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.cake.dao.StoreDAO">
+    <select id="selectAllStore" resultType="StoreEntity">
+        select * from store;
+    </select>
+    <select id="selectAllStoreBySearch" resultType="StoreEntity" parameterType="String">
+        select * from store
+        where s_name = #{search}
+        or s_loc = #{search}
+        or s_ctnt = #{search}
+    </select>
+</mapper>

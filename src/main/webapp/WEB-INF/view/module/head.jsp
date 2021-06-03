@@ -2,14 +2,18 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%--메인 이미지 위치--%>
-<img id="logo" src="/img/cakeLogo.png">
+<a href="/main/stores">
+    <img id="logo" src="/img/cakeLogo.png">
+</a>
 
 <%--searchbar 위치--%>
 
-<div id="search">
+<form id="search" method="get" action="/main/stores">
     <input id="searchInput" type="text" name="search">
-    <img id="searchIcon" src="/img/searchIcon.png">
-</div>
+    <button type="submit" id="searchButton">
+        <img id="searchIcon" src="/img/searchIcon.png">
+    </button>
+</form>
 
 <%--로그인, 회원가입--%>
 <c:if test="${not isLogin}">
