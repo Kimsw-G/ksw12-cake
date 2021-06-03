@@ -6,4 +6,18 @@
     <select id="selectAllStore" resultType="StoreEntity">
         select * from store;
     </select>
+    <select id="selectPasswordById" resultType="String">
+        select u_pw from user
+        where u_id = #{u_id}
+    </select>
+    <select id="selectUserInfoById" resultType="UserEntity">
+        select * from user
+        where u_id = #{u_id}
+    </select>
+    <insert id="insertUserInfo">
+        insert into user
+        (u_id,u_pw,u_type)
+        values
+        (#{u_id},#{u_pw},#{u_type})
+    </insert>
 </mapper>

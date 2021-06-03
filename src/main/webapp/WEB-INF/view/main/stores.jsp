@@ -7,12 +7,15 @@
 
 </div>
 <%--wrapper--%>
-<div>
-<%--4줄씩 infinity or 3줄씩 infinity--%>
-<c:forEach begin="1" end="3">
-  <div>
-
-  </div>
+<div id="stores">
+<c:forEach begin="1" end="5">
+  <div id="storesLine">
+  <%--4줄씩 infinity or 3줄씩 infinity--%>
+  <c:forEach begin="1" end="3">
+    <jsp:include page="store.jsp">
+      <jsp:param name="" value=""/>
+    </jsp:include>
+  </c:forEach>
 </c:forEach>
-
+  </div>
 </div>

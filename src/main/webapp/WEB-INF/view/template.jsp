@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>${title}</title>
+    <link rel="stylesheet" href="/css/head.css">
+    <link rel="stylesheet" href="/css/stores.css">
 </head>
 <body>
     <jsp:include page="./module/head.jsp"/>
 
-    <jsp:include page="./module/${page}.jsp"/>
+    <jsp:include page=".${page}.jsp"/>
 
     <jsp:include page="./module/foot.jsp"/>
 </body>
