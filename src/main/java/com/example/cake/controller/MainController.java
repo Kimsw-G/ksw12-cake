@@ -1,6 +1,5 @@
 package com.example.cake.controller;
 
-import com.example.cake.model.LoginInfo;
 import com.example.cake.service.MainService;
 import com.example.cake.util.ControllerManage;
 import com.example.cake.util.MainPath;
@@ -14,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/main")
@@ -23,7 +23,7 @@ public class MainController extends ControllerManage implements UserPath, MainPa
     @Autowired
     MainService mainService;
     @Resource
-    LoginInfo loginInfo;
+    HttpSession session;
 
     @GetMapping("/stores")
     public String main(Model model,

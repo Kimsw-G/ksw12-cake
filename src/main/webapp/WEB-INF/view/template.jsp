@@ -6,8 +6,10 @@
     <title>${title}</title>
     <link rel="stylesheet" href="/css/head.css">
     <link rel="stylesheet" href="/css/stores.css">
+    <script defer src="/js/errorControl.js"></script>
 </head>
 <body>
+    <input id="errCode" type="hidden" value="${errCode}">
     <jsp:include page="./module/head.jsp"/>
 
     <jsp:include page=".${page}.jsp"/>

@@ -1,20 +1,35 @@
 #search, #searchIcon, #searchInput{
-    border: 1px;
+    border: 0;
     padding: 0;
     margin: 0;
+}
+#logoWrapper{
+    text-align: center;
+}
+#logo{
+
+}
+#searchWrapper{
+    width: 100%;
+    margin: auto;
 }
 #search{
     width: 500px;
     height: 40px;
+    margin: auto;
     display: flex;
 }
 #searchInput{
     width: 460px;
     height: inherit;
 }
+
 #searchIcon,#searchButton{
     border: 0;
     padding: 0;
     width: 40px;
     height: inherit;
+}
+#userWrapper{
+    text-align: right;
 }

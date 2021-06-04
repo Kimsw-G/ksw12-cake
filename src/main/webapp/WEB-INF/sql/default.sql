@@ -8,7 +8,7 @@ use cake;
 
 create table user(
     u_pk int AUTO_INCREMENT primary key,
-    u_id varchar(20) not null,
+    u_id varchar(20) not null unique ,
     u_pw varchar(60) not null,
     u_type tinyint(1) -- 0은 일반회원, 1은 점주
 );
@@ -34,7 +34,7 @@ create table menu(
 
 create table m_picture(
     m_pk int,
-    mp_picture varchar(30),
+    mp_picture varchar(30) unique ,
     foreign key(m_pk) references menu(m_pk)
 );
 
