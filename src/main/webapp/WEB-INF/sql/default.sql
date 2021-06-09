@@ -13,6 +13,8 @@ create table user(
     u_type tinyint(1) -- 0은 일반회원, 1은 점주
 );
 
+
+
 create table store(
     s_pk int AUTO_INCREMENT primary key,
     s_name varchar(25) not null,

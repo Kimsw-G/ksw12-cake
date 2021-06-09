@@ -9,4 +9,11 @@ import java.util.List;
 public interface StoreDAO {
     List<StoreEntity> selectAllStore();
     List<StoreEntity> selectAllStoreBySearch(String search);
+    StoreEntity selectStoreByUPk(StoreEntity storeEntity);
+    StoreEntity selectStoreBySPk(StoreEntity storeEntity);
+    int insertStoreInfo(StoreEntity entity);
+    int selectStoreDuple(StoreEntity entity);
+    int updateStoreInfo(StoreEntity entity);
+
+
 }

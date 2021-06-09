@@ -1,5 +1,6 @@
 package com.example.cake.controller;
 
+import com.example.cake.model.entity.StoreEntity;
 import com.example.cake.service.MainService;
 import com.example.cake.util.ControllerManage;
 import com.example.cake.util.MainPath;
@@ -26,7 +27,7 @@ public class MainController extends ControllerManage implements UserPath, MainPa
     HttpSession session;
 
     @GetMapping("/stores")
-    public String main(Model model,
+    public String goMain(Model model,
                        @RequestParam(value="search",defaultValue = "")String search){
         if(search.equals("")){
             mainService.setStoreInfo(model);
@@ -34,6 +35,16 @@ public class MainController extends ControllerManage implements UserPath, MainPa
             mainService.searchStoreInfo(model,search);
         }
         setPage(model,STORES);
+        return TEMPLATE;
+    }
+
+    @GetMapping("store")
+    public String goStoreDetail(Model model, StoreEntity storeEntity){
+        // 해당 가게의 정보를 전부 가지고 오기
+        System.out.println(storeEntity.getS_pk());
+        mainService.setStoreInfoByPk(model,storeEntity);
+
+        setPage(model,STORE);
         return TEMPLATE;
     }
 

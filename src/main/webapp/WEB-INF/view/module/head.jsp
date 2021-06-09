@@ -27,6 +27,9 @@
 </c:if>
 <c:if test="${isLogin}">
     <div id="userWrapper">
+        <c:if test="${loginInfo.u_type eq 1}">
+        <a href="/user/mystore?u_pk=${loginInfo.u_pk}" id="logout">가게관리</a>
+        </c:if>
         <a href="/user/logout" id="logout">로그아웃</a>
     </div>
 </c:if>

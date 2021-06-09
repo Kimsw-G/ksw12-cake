@@ -2,10 +2,13 @@ package com.example.cake.model.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
+@ToString
 public class StoreEntity {
+    
     private int s_pk;
     private String s_name;
     private String s_loc;

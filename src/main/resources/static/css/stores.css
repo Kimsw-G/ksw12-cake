@@ -28,9 +28,9 @@
 }
 
 #stores{
-    width: 980px;
+    width: 1320px;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(5,1fr);
     gap: 40px 40px;
     position: absolute;

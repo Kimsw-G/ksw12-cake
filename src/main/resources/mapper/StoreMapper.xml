@@ -6,10 +6,36 @@
     <select id="selectAllStore" resultType="StoreEntity">
         select * from store;
     </select>
-    <select id="selectAllStoreBySearch" resultType="StoreEntity" parameterType="String">
+    <select id="selectAllStoreBySearch" resultType="StoreEntity">
         select * from store
-        where s_name = #{search}
-        or s_loc = #{search}
-        or s_ctnt = #{search}
+        where s_name like CONCAT('%',#{search },'%')
+        or s_loc like CONCAT('%',#{search },'%')
+        or s_ctnt like CONCAT('%',#{search },'%')
     </select>
+    <select id="selectStoreBySPk" resultType="StoreEntity">
+        select * from store
+        where s_pk = #{s_pk}
+    </select>
+    <select id="selectStoreByUPk" resultType="StoreEntity">
+        select * from store
+        where u_pk = #{u_pk}
+    </select>
+    <insert id="insertStoreInfo">
+        insert into store
+            (s_name,s_loc,s_time,s_ctnt,s_profile,u_pk)
+        values
+            (#{s_name},#{s_loc},#{s_time},#{s_ctnt},#{s_profile},#{u_pk})
+    </insert>
+    <select id="selectStoreDuple" resultType="int">
+        select count(*) from store
+        where u_pk = #{u_pk}
+    </select>
+    <update id="updateStoreInfo">
+        update store set
+        s_name = #{s_name},
+        s_loc = #{s_loc},
+        s_time = #{s_time},
+        s_ctnt = #{s_ctnt}
+        where u_pk = #{u_pk}
+    </update>
 </mapper>

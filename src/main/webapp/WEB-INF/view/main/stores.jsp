@@ -11,16 +11,19 @@
 <div id="storesWrapper">
 <%--wrapper--%>
 <div id="stores">
-<c:forEach begin="1" end="5">
-<%--  <div id="storesLine">--%>
-  <%--4줄씩 infinity or 3줄씩 infinity--%>
-  <c:forEach begin="1" end="3">
-    <jsp:include page="store.jsp">
-      <jsp:param name="" value=""/>
-    </jsp:include>
-  </c:forEach>
+<c:forEach items="${storeList}" var="store">
+    <a href="/main/store?s_pk=${store.s_pk}">
+        <div id="store">
+                <%--    사진 넣을 공간    --%>
+            <img id="storeImg" src="/img/${store.s_profile}"></img>
+                <%--    텍스트(#태그 등) 넣을 공간--%>
+            <div id="storeText">
+                    ${store.s_name}<br>
+                    ${store.s_ctnt}
+            </div>
+        </div>
+    </a>
 </c:forEach>
-<%--  </div>--%>
 </div>
 </div>
 

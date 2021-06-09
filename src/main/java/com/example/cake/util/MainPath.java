@@ -5,4 +5,5 @@ public interface MainPath {
 
     String STORES = MAIN+"stores";
     String STORE = MAIN+"store";
+
 }

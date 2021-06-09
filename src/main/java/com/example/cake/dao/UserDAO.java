@@ -14,4 +14,5 @@ public interface UserDAO {
     UserEntity selectUserInfoById(UserEntity entity);
     int insertUserInfo(UserEntity entity);
     int selectIdCount(UserDTO userDTO);
+
 }
