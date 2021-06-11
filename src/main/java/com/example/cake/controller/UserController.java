@@ -22,7 +22,7 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/user")
-public class UserController extends ControllerManage implements UserPath, MainPath, ErrorCodeList {
+public class UserController extends ControllerManage implements UserPath, ErrorCodeList {
 
 
 
@@ -45,7 +45,7 @@ public class UserController extends ControllerManage implements UserPath, MainPa
             userService.completeLogin(session,userEntity);
         }
 
-        return REDIRECT+STORES;
+        return REDIRECT+MainPath.STORES;
     }
 
     @GetMapping("/join")
@@ -68,34 +68,14 @@ public class UserController extends ControllerManage implements UserPath, MainPa
         }
 
         userService.tryJoin(userDTO);
-        return REDIRECT+STORES;
+        return REDIRECT+MainPath.STORES;
     }
 
     @GetMapping("/logout")
     public String doLogout(){
         session.invalidate();
-        return REDIRECT+STORES;
+        return REDIRECT+MainPath.STORES;
     }
 
-    // mystore
-    @GetMapping("/mystore")
-    public String goMyStore(StoreEntity storeEntity,
-                            Model model){
-        // 이미 가게가 존재시?
-        if(userService.checkStoreInfo(storeEntity)){
-            model.addAttribute("storeInfo", userService.getStoreInfoByUpk(storeEntity));
-        }
 
-        model.addAttribute("u_pk",storeEntity.getU_pk());
-        setPage(model,MYSTORE);
-        return TEMPLATE;
-    }
-    @PostMapping("/mystore")
-    public String doMyStore(StoreEntity storeEntity, @RequestParam(value = "file") MultipartFile file, HttpServletRequest request){
-        // File을 집어넣고, storeEntity에 파일 이름,경로등을 저장하기
-        storeEntity.setS_profile(userService.regitFile(file,storeEntity.getU_pk(),request.getSession().getServletContext().getRealPath("/img")));
-        // 여기서 가게를 등록하는 SQL 호출
-        userService.regitStore(storeEntity);
-        return REDIRECT+STORES;
-    }
 }

@@ -16,15 +16,15 @@
 </div>
 <c:choose>
     <c:when test="true">
-        <jsp:include page=""/>
+        <jsp:include page="../store/store_info.jsp"/>
     </c:when>
     <c:when test="false">
-        <jsp:include page=""/>
+        <jsp:include page="../store/store_menu.jsp"/>
     </c:when>
     <c:when test="false">
-        <jsp:include page=""/>
+        <jsp:include page="../store/store_review.jsp"/>
     </c:when>
     <c:when test="false">
-        <jsp:include page=""/>
+        <jsp:include page="../store/store_order.jsp"/>
     </c:when>
 </c:choose>

@@ -1,0 +1,33 @@
+#store_info_wrapper{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+#store_info_img{
+    height: 300px;
+    width: 900px;
+    display: flex;
+}
+
+#img_1{
+    width: 300px;
+    background-size: cover;
+}
+#img_2{
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+}
+#img_2_1,#img_2_2{
+    height: 150px;
+    width: 450px;
+}
+#img_2_1{
+    display: flex;
+}
+#img_2_1 div{
+    width: 150px;
+}
+
+

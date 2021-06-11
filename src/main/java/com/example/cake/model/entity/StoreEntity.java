@@ -1,12 +1,8 @@
 package com.example.cake.model.entity;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
-@Getter
-@Setter
-@ToString
+@Data
 public class StoreEntity {
     
     private int s_pk;
@@ -14,6 +10,5 @@ public class StoreEntity {
     private String s_loc;
     private String s_time;
     private String s_ctnt;
-    private String s_profile;
     private int u_pk;
 }

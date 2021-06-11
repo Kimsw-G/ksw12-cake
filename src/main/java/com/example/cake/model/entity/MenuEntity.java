@@ -1,10 +1,8 @@
 package com.example.cake.model.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
 public class MenuEntity {
 
     private int m_pk;

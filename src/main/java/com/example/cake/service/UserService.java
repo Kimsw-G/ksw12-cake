@@ -50,43 +50,4 @@ public class UserService {
         return true;
     }
 
-    // 해당 pk의 가게 정보가 있는지 검사
-    public boolean checkStoreInfo(StoreEntity storeEntity){
-        // 가게 정보가 있으면 true
-        return 1==storeDAO.selectStoreDuple(storeEntity);
-    }
-
-    // 가게 정보 가지고오기
-    public StoreEntity getStoreInfoByUpk(StoreEntity storeEntity){
-        return storeDAO.selectStoreByUPk(storeEntity);
-    }
-    // 가게 등록하기
-    public void regitStore(StoreEntity storeEntity){
-        // 이미 있다면?
-        if(checkStoreInfo(storeEntity)){
-            // 값이 있을시 값을 업데이트 한다
-            storeDAO.updateStoreInfo(storeEntity);
-        }// 없을시 값을 넣는다
-        storeDAO.insertStoreInfo(storeEntity);
-    }
-    
-    // 파일 등록하기
-    public String regitFile(MultipartFile file,int u_pk,String path_){
-
-        new File(path_+"/"+u_pk).mkdir();
-        String _path = "";
-        try{
-            String ext = FilenameUtils.getExtension(file.getOriginalFilename());
-            _path = String.format("/%d/%d.%s",u_pk,u_pk,ext);
-            System.out.println(path_+_path);
-            File dest = new File(path_+_path);
-            file.transferTo(dest);
-        }catch (Exception e){
-            e.printStackTrace();
-            // 추후 이곳에 디폴트 이미지 경로 넣기
-            _path = "";
-        }finally {
-            return _path;
-        }
-    }
 }

@@ -6,8 +6,13 @@
     가게위치<input type="text" placeholder="가게위치" name="s_loc" value="${storeInfo.s_loc}"><br>
     오픈시간<input type="text" placeholder="오픈시간" name="s_time" value="${storeInfo.s_time}"><br>
     가게소개<input type="text" placeholder="가게소개" name="s_ctnt" value="${storeInfo.s_ctnt}"><br>
-    가게사진<input type="file" name="file" accept="image/*">
+    가게사진<input type="file" accept="image/*" id="file-input">
+<%--    여기에 이미지가 뿅 하고 나옴--%>
+    <div class="result"></div>
+    <img class="cropped" src="" alt="">
     <input type="hidden" name="u_pk" value="${u_pk}">
     <input type="submit" value="등록하기">
   </form>
 </div>
+
+<script defer src="/js/config_store.js"></script>
